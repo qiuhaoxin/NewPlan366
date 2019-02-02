@@ -1,0 +1,41 @@
+{
+  "name": "newplan366",
+  "version": "1.0.0",
+  "description": "a product can used to manager personal time perday or perweek",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "websocket",
+    "koa",
+    "react"
+  ],
+  "author": "qiuhaoixn",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-cors": "0.0.16",
+    "koa-json": "^2.0.2",
+    "koa-route": "^3.2.0",
+    "mysql": "^2.16.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-saga": "^0.2.6",
+    "redux": "^4.0.1",
+    "ws": "^6.1.3"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.0"
+  }
+}
