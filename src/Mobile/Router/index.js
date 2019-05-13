@@ -1,26 +1,29 @@
 /**
 *  前端路由
 */
-
-import {Switch,HashRouter,Redirect,Route,withRouter} from 'react-router-dom';
 import React,{Component} from 'react';
+import {Switch,HashRouter,Redirect,Route} from 'react-router-dom';
 
 import asyncComponent from '../../Utils/asyncComponent';
 import MainPage from '../Pages/MainPage';
 
 const LoginPage=asyncComponent(()=>import('../Pages/Login'));
-const Register=asyncComponent(()=>import('../Pages/Register'));
+const RegisterPage=asyncComponent(()=>import('../Pages/Register'));
 
 class Router extends Component{
+	constructor(props){
+		super(props);
+	}
 	render(){
-		<HashRouter>
-            <Switch>
-                <Route exact path='/register' component={Register} />
-                <Route exact path='/login' component={Login} />
-                <Route exact path='/' component={MainPage} />
-
-            </Switch>
-		</HashRouter>
+		return (
+			<HashRouter>
+	            <Switch>
+	                <Route exact path='/register' component={RegisterPage} />
+	                <Route exact path='/login' component={LoginPage} />
+	                <Route exact path='/' component={MainPage} />
+	            </Switch>
+			</HashRouter>
+		)
 	}
 }
 

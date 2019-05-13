@@ -5,15 +5,18 @@ const initialState={
     passWord:'',
 }
 
-export const login=(state,action)=>{
+export const login=(state=initialState,action)=>{
     const type=action.type;
     switch(type){
     	case ActionTypes.LOGIN_ACTION:
             return {
             	...state,
-
             }
     	break;
-    	case 
+    	default:
+            return {
+                ...state,
+            }
+        break;
     }
 }
