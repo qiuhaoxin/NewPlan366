@@ -3,16 +3,46 @@ import PropTypes from 'prop-types';
 import Styles from './index.less';
 import {isEmpty} from '../../../Utils';
 import {connect} from 'react-redux';
+import {Header,ChartView} from 'plan366component';
+import {BarChartCard} from 'aicomponents';
 
 class Login extends Component{
 	constructor(props){
 		super(props);
+    this.data = [{
+    year: '1951 年',
+    sales: 38
+  }, {
+    year: '1952 年',
+    sales: 52
+  }, {
+    year: '1956 年',
+    sales: 61
+  }, {
+    year: '1957 年',
+    sales: 145
+  }, {
+    year: '1958 年',
+    sales: 48
+  }, {
+    year: '1959 年',
+    sales: 38
+  }, {
+    year: '1960 年',
+    sales: 38
+  }, {
+    year: '1962 年',
+    sales: 38
+  }];
 	}
 	state={
         phonenum:'',
         psw:'',
         captcha:'',
 	}
+  componentDidMount(){
+    
+  }
 	handleInputChange=(e,key)=>{
        this.setState({
        	 [key]:e.target.value,
@@ -20,17 +50,13 @@ class Login extends Component{
 	}
   validate=()=>{
       const {phonenum,psw,captcha}=this.state;
-      console.log("phonenum is "+phonenum+" and psw is "+psw);
       if(isEmpty(phonenum)){
-        console.log("phonenum is empty！");
         return false;
       }
       if(isEmpty(psw)){
-        console.log("psw is empty!");
         return false;
       }
       if(isEmpty(captcha)){
-        console.log("captcha is empty!");
         return false;
       }
       return true;
@@ -53,6 +79,7 @@ class Login extends Component{
 	render(){
 		return (
             <div className={Styles.wrapper}>
+                <Header />
                 <div className={Styles.innerWrapper}>
                   <div className={Styles.row}>
                      <label>电话:</label>
@@ -69,7 +96,7 @@ class Login extends Component{
                      <label className={Styles.left} onClick={this.handleRegister}>没有用户？注册</label>
                      <label className={Styles.right} onClick={this.handleResetPsw}>忘记密码</label>
                   </div>
-
+                  <BarChartCard data={this.data}/>
                 </div>
             </div>
 		)
