@@ -1,5 +1,5 @@
 
-export const parsePostData=(ctx)=>{
+ const parsePostData=(ctx)=>{
 
     return new Promise((resolve,reject)=>{
     	try{
@@ -16,6 +16,20 @@ export const parsePostData=(ctx)=>{
     })
 }
 
-export const isEmpty=()=>{
-  
+ const isEmpty=(str)=>{
+    const emptyReg=/^\s*$/;
+    const result=emptyReg.test(str);
+    console.log(`result is `,result);
+    return result;
+    //return emptyReg.test(str);
+}
+
+// export {
+//   parsePostData,
+//   isEmpty,
+// }
+// 
+module.exports={
+  isEmpty,
+  parsePostData,
 }

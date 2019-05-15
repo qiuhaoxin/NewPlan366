@@ -3,37 +3,19 @@ import PropTypes from 'prop-types';
 import Styles from './index.less';
 import {isEmpty} from '../../../Utils';
 import {connect} from 'react-redux';
-import {Header,ChartView} from 'plan366component';
-import {BarChartCard} from 'aicomponents';
+import {NumberOneCard} from 'aicomponents';
 
 class Login extends Component{
 	constructor(props){
 		super(props);
-    this.data = [{
-    year: '1951 年',
-    sales: 38
-  }, {
-    year: '1952 年',
-    sales: 52
-  }, {
-    year: '1956 年',
-    sales: 61
-  }, {
-    year: '1957 年',
-    sales: 145
-  }, {
-    year: '1958 年',
-    sales: 48
-  }, {
-    year: '1959 年',
-    sales: 38
-  }, {
-    year: '1960 年',
-    sales: 38
-  }, {
-    year: '1962 年',
-    sales: 38
-  }];
+    this.cardData={
+         title:'金蝶云2月份的续费率',
+         cardType:'two',
+         bodyData:[
+            [{key:'苍穹',value:'50%',id:0},{key:'星空',value:'70%',id:1}],
+         ],
+         updateTime:'2018.09.01',
+    }
 	}
 	state={
         phonenum:'',
@@ -79,7 +61,6 @@ class Login extends Component{
 	render(){
 		return (
             <div className={Styles.wrapper}>
-                <Header />
                 <div className={Styles.innerWrapper}>
                   <div className={Styles.row}>
                      <label>电话:</label>
@@ -96,7 +77,7 @@ class Login extends Component{
                      <label className={Styles.left} onClick={this.handleRegister}>没有用户？注册</label>
                      <label className={Styles.right} onClick={this.handleResetPsw}>忘记密码</label>
                   </div>
-                  <BarChartCard data={this.data}/>
+                  <NumberOneCard data={this.cardData} desc={'数据找到啦'}></NumberOneCard>
                 </div>
             </div>
 		)
